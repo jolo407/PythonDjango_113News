@@ -1,12 +1,43 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}Log In{% endblock title %}
+{% load static %}
 
 {% block content %}
-<h2>Log In</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Log In</button>
-</form>
-{% endblock content %}
+<div class="login-header">
+    <h1 style="font-size: 50px; text-align: center;">Welcome Back</h1>
+    <h6>Dont have an account? <a href="{% url 'signup' %}" style="color:aqua;">Sign up</a></h6>
+</div>
+
+    <div class="login-buttons">
+        <ul>
+            <a href="https://www.facebook.com/" id="facebook" class="btn btn-secondary btn-lg"> <i
+                    class="fab fa-facebook-square"></i>Log in with Facebook</a>
+            <a href="https://accounts.google.com/Login/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin" id="google" class="btn btn-secondary btn-lg"><i class="fab fa-google"></i>Log in with Google</a>
+            <a href="https://www.icloud.com/" id="icloud" class="btn btn-secondary btn-lg"> <i class="fab fa-apple"></i>Log in with
+                Apple</a>
+            <br />
+            <!--<li class="btn btn-secondary btn-lg"> Log in with Username</li> -->
+    </div>
+    </ul>
+
+</div>
+    <!-- Login Form -->
+<div class="container">
+    <h2 style="text-align: center;">Log In</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br />
+        <button class="btn btn-success btn-sm" style="color: lightcyan" type="submit">Log In</button>
+    </form>
+</div>
+
+
+
+
+
+
+
+    {% endblock content %}

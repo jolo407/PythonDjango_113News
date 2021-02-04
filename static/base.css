@@ -1,0 +1,73 @@
+body {
+    background-color: navy;
+    color: white;
+}
+
+#login {
+    margin-right: 1rem;
+}
+
+.container {
+    max-width: 15rem;
+}
+
+.login-header {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.container h2 {
+    text-align: center;
+}
+
+.login-buttons{
+    text-align: center;
+    margin-top: 2rem;
+    
+}
+
+.login-buttons ul {
+    *max-width: 22rem; */
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.login-buttons a {
+    margin: 1rem;
+    /*max-width: 18rem;*/
+
+}
+
+.fab {
+    padding-right: 1rem;
+}
+
+#signup2 {
+    margin-top: 2rem;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+#Create {
+    margin-top: 2rem;
+}
+
+.card, .card-body {
+    text-align: center;
+    background-color: lightgray;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -37,8 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 3rd Party
+    'crispy_forms',
+    #Local
     'accounts',
     'pages',
+    'articles',
 ]
 
 MIDDLEWARE = [
@@ -120,8 +124,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+STATIC_ROOT=str(BASE_DIR.joinpath('staticfiles'))
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE ='django.contrib.staticfiles.storage.StaticFilesStorage'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'joel.otero86@gmail.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+#EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+TIME_ZONE = 'America/New_York'
